@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Explore an archived NOAA radar volume with VTK.js and MapLibre." />
+    <title>Storm cross-section · VTK.js + MapLibre</title>
+    <script>
+      const storm = new URL('./storm/', location.href);
+      storm.search = location.search;
+      storm.hash = location.hash;
+      location.replace(storm);
+    </script>
+  </head>
+  <body><a href="./storm/">See storm example</a></body>
+</html>

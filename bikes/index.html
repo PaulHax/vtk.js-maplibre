@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Live NYC bike availability rendered with VTK.js in a MapLibre map." />
+    <title>NYC bike availability · VTK.js + MapLibre</title>
+  </head>
+  <body class="bikes">
+    <main>
+      <div id="map" aria-label="Live NYC bike availability rendered with VTK.js in a MapLibre map."></div>
+      <section class="panel" aria-labelledby="title">
+        <h1 id="title">NYC bike availability</h1>
+        <p class="subtitle">Live station reports</p>
+        <p class="encoding">Column height shows available bikes.<br />Color shows the fraction available.</p>
+        <div class="legend" aria-hidden="true"></div>
+        <div class="legend-labels"><span>0% available</span><span>100%</span></div>
+        <p class="feed"><a href="https://citibikenyc.com/system-data">Citi Bike live feed</a> · <span id="count">Loading</span><time id="updated"></time></p>
+        <p id="status" class="status" role="status"></p>
+        <p id="map-status" class="status" role="status"></p>
+        <div id="controls"></div>
+        <p class="integration">VTK.js draws the geometry.<br />MapLibre draws the map.</p>
+        <details>
+          <summary>Developer notes</summary>
+          <p>One shared WebGL canvas, using <code>manageCanvas: false</code> and <code>vtkGlyph3DMapper</code>. The feed refreshes each minute.</p>
+          <p>Height uses 4 meters per bike for visibility. Zero bikes appear as a thin disc. Inactive stations and reports more than 15 minutes older than the feed are omitted.</p>
+          <p>Hover or tap a marker for details. Right-drag to tilt the map.</p>
+          <a href="https://github.com/PaulHax/vtk.js-maplibre">Source code</a> · <a href="https://citibikenyc.com/data-sharing-policy">Data policy</a>
+        </details>
+        <nav class="examples" aria-label="Other examples"><a class="cross-link" href="../storm/">See storm example</a></nav>
+      </section>
+      <div id="tooltip" class="tooltip" hidden></div>
+    </main>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

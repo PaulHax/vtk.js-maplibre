@@ -1,0 +1,96 @@
+{
+  "title": "Oklahoma City radar reflectivity",
+  "radar": "KTLX",
+  "timestamp": "2013-05-20T20:16:43.850Z",
+  "start": "2013-05-20T20:16:43.850Z",
+  "end": "2013-05-20T20:20:50.143Z",
+  "dataFile": "reflectivity.bin",
+  "dimensions": [
+    128,
+    128,
+    48
+  ],
+  "origin": [
+    -50000.0,
+    -20000.0,
+    0.0
+  ],
+  "spacing": [
+    629.921259842522,
+    629.9212598425183,
+    319.1489361702128
+  ],
+  "mapOrigin": [
+    -97.27748107910156,
+    35.33305740356445
+  ],
+  "source": {
+    "url": "https://unidata-nexrad-level2.s3.amazonaws.com/2013/05/20/KTLX/KTLX20130520_201643_V06.gz",
+    "file": "KTLX20130520_201643_V06.gz",
+    "sha256": "772e01b154a5c966982a6d0aa2fc78bc64f08a9b77165b74dc02d7aa5aa69275",
+    "provider": "NOAA/National Weather Service, archived by NSF Unidata",
+    "documentation": "https://www.ncei.noaa.gov/products/radar/next-generation-weather-radar",
+    "attribution": "Contains NOAA/NWS radar data. This visualization is not a NOAA or NWS product."
+  },
+  "data": {
+    "type": "Uint8Array",
+    "order": "x-fastest, then y, then z",
+    "uncompressedBytes": 786432,
+    "compression": "none",
+    "sha256": "eb0bfec21478f4e0eeff94f8e37cc6d03e0ec16e4adf85db7df04d05b95bc650"
+  },
+  "encoding": {
+    "missing": 0,
+    "offset": -32.5,
+    "scale": 0.5,
+    "formula": "dBZ = value * 0.5 - 32.5 for value > 0",
+    "units": "dBZ"
+  },
+  "coordinates": {
+    "geographicOrigin": [
+      -97.27748107910156,
+      35.33305740356445
+    ],
+    "radarAltitudeMeters": 388.0,
+    "projection": {
+      "proj": "merc",
+      "R": 6371008.8,
+      "lat_ts": 35.33305740356445,
+      "lon_0": -97.27748107910156,
+      "x_0": 0,
+      "y_0": -3430073.184723507,
+      "units": "m"
+    },
+    "description": "Local spherical Mercator, scaled to meters at radar latitude; x east, y north. z is altitude above mean sea level.",
+    "maplibreEarthRadiusMeters": 6371008.8,
+    "bounds": [
+      [
+        -97.82866758043106,
+        35.15299334266805
+      ],
+      [
+        -96.94676917830394,
+        35.87084449109038
+      ]
+    ]
+  },
+  "processing": {
+    "software": {
+      "arm_pyart": "2.1.1",
+      "numpy": "2.2.6",
+      "pyproj": "3.7.1"
+    },
+    "method": "Barnes2 interpolation of dBZ, distance/beam radius of influence, minimum radius 700 m, nb=1, bsp=1.",
+    "mask": "Masked, invalid and antenna-transition gates are excluded. Grid points with no contributing observations or below radar altitude (388 m MSL) remain byte 0.",
+    "quantization": "0.5 dBZ steps; values clipped to [-32, 95] dBZ. No reflectivity threshold is applied to the stored volume.",
+    "validVoxels": 345676,
+    "missingVoxels": 440756,
+    "rangeDbz": [
+      -18.289161682128906,
+      66.36499786376953
+    ],
+    "clippedVoxels": 0,
+    "limitations": "One archived scan acquired over about four minutes. Interpolation is not a direct measurement at every voxel. No clutter, terrain or precipitation-type correction is performed. Missing coverage does not mean clear air.",
+    "citation": "Helmus and Collis (2016), doi:10.5334/jors.119"
+  }
+}

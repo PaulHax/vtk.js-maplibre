@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Explore an archived NOAA radar volume with VTK.js and MapLibre." />
+    <title>Storm cross-section · VTK.js + MapLibre</title>
+  </head>
+  <body class="storm">
+    <main>
+      <div id="map" aria-label="Interactive map with a 3D radar reflectivity volume"></div>
+      <section class="panel" aria-labelledby="title">
+        <h1 id="title">Storm cross-section</h1>
+        <p class="subtitle">Oklahoma · 20 May 2013<br /><span id="scan-time">Archived NOAA radar</span></p>
+        <div id="controls"></div>
+        <p class="cut-location">Cut position: <output id="cut-value"></output></p>
+        <div class="range-labels"><span>South</span><span>North</span></div>
+        <figure class="slice-figure">
+          <div id="slice" aria-label="Vertical radar cross-section at the cut position"></div>
+          <figcaption>West–east section · height ×3</figcaption>
+        </figure>
+        <div class="reflectivity-legend" aria-hidden="true"></div>
+        <div class="legend-labels"><span>20</span><span>45</span><span>70 dBZ</span></div>
+        <p class="feed">Color shows radar reflectivity.</p>
+        <p id="status" class="status" role="status">Loading radar volume…</p>
+        <p id="map-status" class="status" role="status"></p>
+        <p class="integration">VTK.js draws the volume and slice.<br />MapLibre draws the map.</p>
+        <details>
+          <summary>Developer notes</summary>
+          <p>One archived scan, prepared once as a small 3D image. The browser uses VTK.js volume rendering and an image slice.</p>
+          <p>The map and volume share a WebGL canvas. The slice has its own small canvas. Drag the map to pan; right-drag to tilt.</p>
+          <p>Height is exaggerated three times. Missing radar samples are transparent. This is a gridded historical observation.</p>
+          <a href="https://github.com/PaulHax/vtk.js-maplibre/tree/main/storm">Source code</a> · <a href="https://registry.opendata.aws/noaa-nexrad/">NOAA data</a>
+        </details>
+        <nav class="examples" aria-label="Other examples"><a class="cross-link" href="../bikes/">See bikes example</a></nav>
+      </section>
+    </main>
+    <script type="module" src="/src/storm.js"></script>
+  </body>
+</html>

@@ -1,0 +1,22 @@
+Radar data source and reuse
+
+This directory contains a processed subset of NOAA/National Weather Service
+NEXRAD Level II observations from KTLX, Oklahoma, acquired on 20 May 2013
+from 20:16:43 to 20:20:50 UTC. NSF Unidata distributes the source archive:
+https://unidata-nexrad-level2.s3.amazonaws.com/2013/05/20/KTLX/KTLX20130520_201643_V06.gz
+Dataset citation: https://doi.org/10.7289/V5W9574V
+
+The dataset's published reuse terms permit NOAA NODD data to be used as
+desired. They request attribution, prohibit implying NOAA endorsement or
+affiliation, and require modified data not to be presented as unaltered NOAA
+data. Terms checked on 5 November 2026:
+https://registry.opendata.aws/noaa-nexrad/
+
+This is a modified dataset, not an official NOAA or NWS product. Py-ART was
+used to interpolate reflectivity onto a Cartesian grid, crop its extent,
+mask missing coverage and levels below radar altitude, and quantize values
+to 0.5 dBZ steps. Metadata records the original file, source checksum,
+projection, encoding, software versions, and processing details.
+
+Py-ART citation: Helmus and Collis (2016), doi:10.5334/jors.119.
+The application code's BSD-3-Clause license is separate from these data terms.

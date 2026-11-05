@@ -1,0 +1,16 @@
+.storm .panel { width: 270px; }
+.cut-location { font-size: 11px; }
+.storm output { color: #687981; font-variant-numeric: tabular-nums; }
+.range-labels { display: flex; justify-content: space-between; font-size: 10px; color: #687981; }
+.slice-figure { margin: 12px 0 10px; }
+#slice { width: 100%; height: 135px; overflow: hidden; background: #15232e; }
+#slice canvas { display: block; }
+.slice-figure figcaption { margin-top: 4px; color: #687981; font-size: 10px; }
+.reflectivity-legend { height: 5px; border-radius: 3px; background: linear-gradient(to right, #2673f2, #1aba73 20%, #fcdb33 40%, #f76617 60%, #d92140 80%, #801aa6); }
+.storm .feed { margin: 3px 0; }
+@media (max-width: 700px) {
+  .storm .panel { width: 226px; padding: 12px; }
+  #slice { height: 105px; }
+  .storm .integration { margin: 6px 0; }
+  .storm .slice-figure { margin-top: 8px; }
+}

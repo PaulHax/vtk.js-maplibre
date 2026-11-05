@@ -1,0 +1,65 @@
+@import 'maplibre-gl/dist/maplibre-gl.css';
+:root { font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; color: #263b43; background: #e5edef; font-synthesis: none; }
+* { box-sizing: border-box; }
+body { margin: 0; }
+main, #map { width: 100%; height: 100dvh; }
+#map { position: absolute; inset: 0; }
+a { color: #176a79; text-underline-offset: 3px; }
+a:hover { color: #0a4652; }
+.panel { position: absolute; z-index: 2; left: 20px; top: 20px; width: 264px; padding: 18px; background: white; border: 1px solid #d9e1e4; border-radius: 6px; box-shadow: 0 2px 12px #21323b0b; font-size: 12px; line-height: 1.5; }
+h1 { font-size: 18px; line-height: 1.3; font-weight: 650; margin: 0 0 4px; letter-spacing: -.35px; }
+p { margin: 8px 0; }
+.subtitle { margin: 0 0 14px; color: #61737b; }
+.encoding { margin: 10px 0 5px; }
+.legend { height: 5px; border-radius: 3px; background: linear-gradient(to right, #f28f35, #11a79b); margin-top: 10px; }
+.legend-labels { display: flex; justify-content: space-between; color: #64747b; font-size: 10px; margin: 3px 0 12px; }
+.feed { color: #687981; font-size: 11px; }
+.feed time { display: block; }
+button { border: 0; background: none; padding: 0; color: #176a79; text-decoration: underline; text-underline-offset: 3px; font: inherit; cursor: pointer; }
+button:disabled { color: #84949b; cursor: wait; }
+button:focus-visible, a:focus-visible, summary:focus-visible { outline: 2px solid #168780; outline-offset: 4px; }
+.integration { color: #61737b; font-size: 11px; margin: 10px 0; }
+details { border-top: 1px solid #e4e9eb; padding-top: 11px; }
+summary { cursor: pointer; color: #425963; font-size: 11px; }
+details p { color: #61737b; }
+code { font-size: 10px; overflow-wrap: anywhere; }
+.cross-link { display: block; margin-top: 12px; font-size: 11px; }
+.examples { display: flex; gap: 14px; margin-top: 12px; font-size: 11px; }
+.examples .cross-link { margin-top: 0; }
+.status { color: #8a531c; margin: 7px 0; }
+.status:empty { display: none; }
+.tooltip { position: absolute; z-index: 4; width: 264px; background: white; padding: 14px; border-radius: 5px; border: 1px solid #d9e1e4; box-shadow: 0 3px 18px #17313b1a; font-size: 12px; line-height: 1.5; }
+.tooltip[hidden] { display: none; }
+.tooltip strong { font-weight: 650; }
+.tooltip p { margin: 5px 0; color: #61737b; }
+.tooltip button { float: right; }
+.maplibregl-ctrl-top-right { top: 10px; right: 10px; }
+.maplibregl-ctrl-attrib { font-size: 10px; }
+.panel .lil-gui {
+  --width: 100%;
+  --background-color: #fff;
+  --text-color: #263b43;
+  --title-background-color: #f1f5f6;
+  --title-text-color: #425963;
+  --widget-color: #e8eef0;
+  --hover-color: #dce7ea;
+  --focus-color: #d0e2e5;
+  --number-color: #176a79;
+  --string-color: #176a79;
+  --widget-border-radius: 3px;
+  font-family: inherit;
+  margin: 10px 0;
+}
+.panel .lil-gui > .lil-title { display: none; }
+.panel .lil-gui button { text-decoration: none; }
+.panel .lil-gui :is(button, input):focus-visible { outline: 2px solid #168780; outline-offset: -2px; }
+@media (pointer: fine) { .panel .lil-gui { --widget-height: 24px; } }
+@media (max-width: 700px) {
+  .panel { left: 10px; top: 10px; width: 244px; padding: 13px 15px; font-size: 11px; }
+  h1 { font-size: 16px; }
+  .subtitle { margin-bottom: 9px; }
+  .encoding, .legend-labels { margin-bottom: 6px; }
+  .cross-link { margin-top: 8px; }
+  details[open] { max-height: 30dvh; overflow-y: auto; }
+  .maplibregl-ctrl-top-right { top: 0; right: 0; }
+}
